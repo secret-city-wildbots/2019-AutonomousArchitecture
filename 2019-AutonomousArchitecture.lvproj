@@ -96,32 +96,42 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="Driver Station" Type="Folder">
+			<Item Name="DriverStationGetInstructions.vi" Type="VI" URL="../DriverStationGetInstructions.vi"/>
+		</Item>
 		<Item Name="Global Variables" Type="Folder">
-			<Item Name="commands.vi" Type="VI" URL="../commands.vi"/>
+			<Item Name="constants.vi" Type="VI" URL="../constants.vi"/>
+			<Item Name="instructions.vi" Type="VI" URL="../instructions.vi"/>
 			<Item Name="outputs.vi" Type="VI" URL="../outputs.vi"/>
 			<Item Name="refnums.vi" Type="VI" URL="../refnums.vi"/>
 			<Item Name="sensors.vi" Type="VI" URL="../sensors.vi"/>
 		</Item>
 		<Item Name="Initialization" Type="Folder">
+			<Item Name="Begin.vi" Type="VI" URL="../Begin.vi"/>
+			<Item Name="Finish.vi" Type="VI" URL="../Finish.vi"/>
+			<Item Name="InitConstants.vi" Type="VI" URL="../InitConstants.vi"/>
 			<Item Name="InitDrive.vi" Type="VI" URL="../InitDrive.vi"/>
 			<Item Name="InitSensor.vi" Type="VI" URL="../InitSensor.vi"/>
 		</Item>
 		<Item Name="lib" Type="Folder" URL="/&lt;vilib&gt;/addons/FRC_ThirdParty/lib">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="Subsystem Drive" Type="Folder">
+			<Item Name="WildDrive_v5.0.vi" Type="VI" URL="../WildDrive_v5.0.vi"/>
+		</Item>
 		<Item Name="Support Code" Type="Folder">
 			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
 		</Item>
 		<Item Name="Team Code" Type="Folder">
 			<Item Name="Autonomous Independent.vi" Type="VI" URL="../Autonomous Independent.vi"/>
-			<Item Name="Begin.vi" Type="VI" URL="../Begin.vi"/>
 			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
-			<Item Name="Finish.vi" Type="VI" URL="../Finish.vi"/>
 			<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
-			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
 			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
 			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
+		</Item>
+		<Item Name="Utility" Type="Folder">
+			<Item Name="TriggerUpdate.vim" Type="VI" URL="../TriggerUpdate.vim"/>
 		</Item>
 		<Item Name="Action_1.vi" Type="VI" URL="../Action_1.vi"/>
 		<Item Name="Action_2.vi" Type="VI" URL="../Action_2.vi"/>
@@ -223,6 +233,7 @@ AddOutputFilter chunkFilter
 				<Item Name="NetComm_UnloadCPPStartupProgram.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/NetworkCommunication/NetComm_UnloadCPPStartupProgram.vi"/>
 				<Item Name="NetComm_UsageReport_report.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/NetworkCommunication/NetComm_UsageReport_report.vi"/>
 				<Item Name="NetComm_UsageReport_ResourceType.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/NetworkCommunication/NetComm_UsageReport_ResourceType.ctl"/>
+				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
 				<Item Name="NI_Vision_Acquisition_Software.lvlib" Type="Library" URL="/&lt;vilib&gt;/vision/driver/NI_Vision_Acquisition_Software.lvlib"/>
 				<Item Name="Not A Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Not A Semaphore.vi"/>
 				<Item Name="NT Globals.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/NT Globals.vi"/>
@@ -508,6 +519,7 @@ AddOutputFilter chunkFilter
 			<Item Name="FRC_NetworkCommunication.dll" Type="Document" URL="FRC_NetworkCommunication.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -517,6 +529,7 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="FRC Robot Boot-up Deployment" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
