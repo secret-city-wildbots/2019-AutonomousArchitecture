@@ -96,11 +96,29 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="Autonomous" Type="Folder">
+			<Item Name="AutoEnd.vi" Type="VI" URL="../AutoEnd.vi"/>
+			<Item Name="AutoParser.vi" Type="VI" URL="../AutoParser.vi"/>
+			<Item Name="AutoPressA.vi" Type="VI" URL="../AutoPressA.vi"/>
+			<Item Name="AutoWait.vi" Type="VI" URL="../AutoWait.vi"/>
+			<Item Name="DriveDistance.vi" Type="VI" URL="../DriveDistance.vi"/>
+			<Item Name="DriveHalt.vi" Type="VI" URL="../DriveHalt.vi"/>
+			<Item Name="FollowPath.vi" Type="VI" URL="../FollowPath.vi"/>
+		</Item>
 		<Item Name="Driver Station" Type="Folder">
+			<Item Name="DriverStationGetData.vi" Type="VI" URL="../DriverStationGetData.vi"/>
 			<Item Name="DriverStationGetInstructions.vi" Type="VI" URL="../DriverStationGetInstructions.vi"/>
+		</Item>
+		<Item Name="FIRST Architecture" Type="Folder">
+			<Item Name="Autonomous Independent.vi" Type="VI" URL="../Autonomous Independent.vi"/>
+			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
+			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
+			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
+			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
 		</Item>
 		<Item Name="Global Variables" Type="Folder">
 			<Item Name="constants.vi" Type="VI" URL="../constants.vi"/>
+			<Item Name="dsdata.vi" Type="VI" URL="../dsdata.vi"/>
 			<Item Name="instructions.vi" Type="VI" URL="../instructions.vi"/>
 			<Item Name="outputs.vi" Type="VI" URL="../outputs.vi"/>
 			<Item Name="refnums.vi" Type="VI" URL="../refnums.vi"/>
@@ -117,26 +135,18 @@ AddOutputFilter chunkFilter
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Subsystem Drive" Type="Folder">
+			<Item Name="DriveStateController.vi" Type="VI" URL="../DriveStateController.vi"/>
 			<Item Name="WildDrive_v5.0.vi" Type="VI" URL="../WildDrive_v5.0.vi"/>
 		</Item>
-		<Item Name="Support Code" Type="Folder">
-			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
-		</Item>
-		<Item Name="Team Code" Type="Folder">
-			<Item Name="Autonomous Independent.vi" Type="VI" URL="../Autonomous Independent.vi"/>
-			<Item Name="Disabled.vi" Type="VI" URL="../Disabled.vi"/>
-			<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
-			<Item Name="Teleop.vi" Type="VI" URL="../Teleop.vi"/>
-			<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
-			<Item Name="Vision Processing.vi" Type="VI" URL="../Vision Processing.vi"/>
-		</Item>
 		<Item Name="Utility" Type="Folder">
+			<Item Name="CustomPID_v3.0.vi" Type="VI" URL="../CustomPID_v3.0.vi"/>
+			<Item Name="EdgeTrigger.vi" Type="VI" URL="../EdgeTrigger.vi"/>
+			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
+			<Item Name="TimeThreshold.vi" Type="VI" URL="../TimeThreshold.vi"/>
+			<Item Name="Toggle.vi" Type="VI" URL="../Toggle.vi"/>
 			<Item Name="TriggerUpdate.vim" Type="VI" URL="../TriggerUpdate.vim"/>
 		</Item>
-		<Item Name="Action_1.vi" Type="VI" URL="../Action_1.vi"/>
-		<Item Name="Action_2.vi" Type="VI" URL="../Action_2.vi"/>
-		<Item Name="AutoParser.vi" Type="VI" URL="../AutoParser.vi"/>
-		<Item Name="FollowPath.vi" Type="VI" URL="../FollowPath.vi"/>
+		<Item Name="Periodic Tasks.vi" Type="VI" URL="../Periodic Tasks.vi"/>
 		<Item Name="Robot Main.vi" Type="VI" URL="../Robot Main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -234,6 +244,7 @@ AddOutputFilter chunkFilter
 				<Item Name="NetComm_UsageReport_report.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/NetworkCommunication/NetComm_UsageReport_report.vi"/>
 				<Item Name="NetComm_UsageReport_ResourceType.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/NetworkCommunication/NetComm_UsageReport_ResourceType.ctl"/>
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+				<Item Name="NI_AALPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALPro.lvlib"/>
 				<Item Name="NI_Vision_Acquisition_Software.lvlib" Type="Library" URL="/&lt;vilib&gt;/vision/driver/NI_Vision_Acquisition_Software.lvlib"/>
 				<Item Name="Not A Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Not A Semaphore.vi"/>
 				<Item Name="NT Globals.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/NT Globals.vi"/>
@@ -433,6 +444,7 @@ AddOutputFilter chunkFilter
 				<Item Name="WPI_ERRAllocAnInvalidSolenoidIdx.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_ERRAllocAnInvalidSolenoidIdx.vi"/>
 				<Item Name="WPI_ERRPwmChannelAllocated.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/PWM/WPI_ERRPwmChannelAllocated.vi"/>
 				<Item Name="WPI_ERRSolenoidAllocation.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_ERRSolenoidAllocation.vi"/>
+				<Item Name="WPI_ERRSolenoidNotAllocated.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_ERRSolenoidNotAllocated.vi"/>
 				<Item Name="WPI_GetSetVariantRefNum.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/WPI_GetSetVariantRefNum.vi"/>
 				<Item Name="WPI_JoystickArcadeMapping.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Joystick/WPI_JoystickArcadeMapping.vi"/>
 				<Item Name="WPI_JoystickButtonSpinMapping.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Joystick/WPI_JoystickButtonSpinMapping.vi"/>
@@ -507,10 +519,20 @@ AddOutputFilter chunkFilter
 				<Item Name="WPI_SolenoidCacheOp.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidCacheOp.ctl"/>
 				<Item Name="WPI_SolenoidChannel.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidChannel.ctl"/>
 				<Item Name="WPI_SolenoidDevRef.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidDevRef.ctl"/>
+				<Item Name="WPI_SolenoidDoesDevRefExist.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidDoesDevRefExist.vi"/>
 				<Item Name="WPI_SolenoidOpen.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidOpen.vi"/>
 				<Item Name="WPI_SolenoidOpenDouble.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidOpenDouble.vi"/>
 				<Item Name="WPI_SolenoidOpenSingle.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidOpenSingle.vi"/>
+				<Item Name="WPI_SolenoidRefNum Registry Get.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidRefNum Registry Get.vi"/>
+				<Item Name="WPI_SolenoidRefNum Registry Read Name.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidRefNum Registry Read Name.vi"/>
 				<Item Name="WPI_SolenoidRefNum Registry Set.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidRefNum Registry Set.vi"/>
+				<Item Name="WPI_SolenoidSafetyCheck.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidSafetyCheck.vi"/>
+				<Item Name="WPI_SolenoidSafetyError.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidSafetyError.vi"/>
+				<Item Name="WPI_SolenoidSafetyUpdate.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidSafetyUpdate.vi"/>
+				<Item Name="WPI_SolenoidSet.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidSet.vi"/>
+				<Item Name="WPI_SolenoidSetBool.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/Deprecated/WPI_SolenoidSetBool.vi"/>
+				<Item Name="WPI_SolenoidSetEnum.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidSetEnum.vi"/>
+				<Item Name="WPI_SolenoidValue.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Solenoid/WPI_SolenoidValue.ctl"/>
 				<Item Name="WPI_UtilitiesERRGetRefNum.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/WPI_UtilitiesERRGetRefNum.vi"/>
 				<Item Name="WPI_UtilitiesFRC Build Error.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/WPI_UtilitiesFRC Build Error.vi"/>
 				<Item Name="WPI_UtilitiesFRCAutomaticValuePublisher.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/WPI_UtilitiesFRCAutomaticValuePublisher.vi"/>
@@ -529,7 +551,6 @@ AddOutputFilter chunkFilter
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Robot Global Data.vi" Type="VI" URL="../Robot Global Data.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="FRC Robot Boot-up Deployment" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
