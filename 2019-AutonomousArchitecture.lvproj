@@ -98,6 +98,7 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="Autonomous" Type="Folder">
 			<Item Name="AutoEnd.vi" Type="VI" URL="../AutoEnd.vi"/>
+			<Item Name="AutoInit.vi" Type="VI" URL="../AutoInit.vi"/>
 			<Item Name="AutoParser.vi" Type="VI" URL="../AutoParser.vi"/>
 			<Item Name="AutoPlaySelection.vi" Type="VI" URL="../AutoPlaySelection.vi"/>
 			<Item Name="AutoPressA.vi" Type="VI" URL="../AutoPressA.vi"/>
@@ -122,9 +123,10 @@ AddOutputFilter chunkFilter
 		<Item Name="Global Variables" Type="Folder">
 			<Item Name="constants.vi" Type="VI" URL="../constants.vi"/>
 			<Item Name="dsdata.vi" Type="VI" URL="../dsdata.vi"/>
-			<Item Name="instructions.vi" Type="VI" URL="../instructions.vi"/>
+			<Item Name="dsinstructions.vi" Type="VI" URL="../dsinstructions.vi"/>
 			<Item Name="outputs.vi" Type="VI" URL="../outputs.vi"/>
 			<Item Name="refnums.vi" Type="VI" URL="../refnums.vi"/>
+			<Item Name="robotmodes.vi" Type="VI" URL="../robotmodes.vi"/>
 			<Item Name="sensors.vi" Type="VI" URL="../sensors.vi"/>
 		</Item>
 		<Item Name="Initialization" Type="Folder">
@@ -150,6 +152,7 @@ AddOutputFilter chunkFilter
 			<Item Name="CustomPID_v3.0.vi" Type="VI" URL="../CustomPID_v3.0.vi"/>
 			<Item Name="EdgeTrigger.vi" Type="VI" URL="../EdgeTrigger.vi"/>
 			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
+			<Item Name="ReadCSV.vi" Type="VI" URL="../ReadCSV.vi"/>
 			<Item Name="TimeThreshold.vi" Type="VI" URL="../TimeThreshold.vi"/>
 			<Item Name="Toggle.vi" Type="VI" URL="../Toggle.vi"/>
 			<Item Name="TriggerUpdate.vim" Type="VI" URL="../TriggerUpdate.vim"/>
@@ -164,6 +167,8 @@ AddOutputFilter chunkFilter
 				<Item Name="Cached Name Lookup.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Cached Name Lookup.vi"/>
 				<Item Name="Cast to Little Endian Byte Array.vim" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/ThirdParty/REV Robotics/SPARK MAX/SubVI/Private/Cast to Little Endian Byte Array.vim"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Close File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Close File+.vi"/>
+				<Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
 				<Item Name="Convert NT Boolean to LV String.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Convert NT Boolean to LV String.vi"/>
 				<Item Name="Convert NT Types.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Convert NT Types.vi"/>
 				<Item Name="Convert String to NT Boolean Array Buffer.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Convert String to NT Boolean Array Buffer.vi"/>
@@ -210,6 +215,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Field Data.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Field Data.ctl"/>
 				<Item Name="Field ID.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Field ID.ctl"/>
 				<Item Name="Field Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Field Type.ctl"/>
+				<Item Name="Find First Error.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find First Error.vi"/>
 				<Item Name="FPGA_CounterERRInvalidResource.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/Counter/FPGA_CounterERRInvalidResource.vi"/>
 				<Item Name="FPGA_DIOChannel.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/DIO/FPGA_DIOChannel.ctl"/>
 				<Item Name="FPGA_DIODevRef.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/SystemInterfaces/DIO/FPGA_DIODevRef.ctl"/>
@@ -295,7 +301,14 @@ AddOutputFilter chunkFilter
 				<Item Name="NT Write Value.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/NT Write Value.vi"/>
 				<Item Name="NT Write Variant.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/NT Write Variant.vi"/>
 				<Item Name="Obtain Semaphore Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Obtain Semaphore Reference.vi"/>
+				<Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
 				<Item Name="Prepare Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Prepare Pattern.vi"/>
+				<Item Name="Read Delimited Spreadsheet (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (DBL).vi"/>
+				<Item Name="Read Delimited Spreadsheet (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (I64).vi"/>
+				<Item Name="Read Delimited Spreadsheet (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (string).vi"/>
+				<Item Name="Read Delimited Spreadsheet.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet.vi"/>
+				<Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
+				<Item Name="Read Lines From File (with error IO).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Lines From File (with error IO).vi"/>
 				<Item Name="Refnum Registry Operation.ctl" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/WPI/Utilities/Refnum Registry Operation.ctl"/>
 				<Item Name="Release Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Release Semaphore.vi"/>
 				<Item Name="Report Read Error.vi" Type="VI" URL="/&lt;vilib&gt;/Rock Robotics/Network Tables/Report Read Error.vi"/>
