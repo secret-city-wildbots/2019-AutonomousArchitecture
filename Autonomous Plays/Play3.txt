@@ -1,0 +1,9 @@
+DriveHalt=1000,+
+DriveDistance=101,+
+DriveHalt=1000,+
+DriveDistance=20,+
+DriveEnd=+
+*=+
+AutoWait=5000,+
+AutoPressA=+
+AutoEnd=+
