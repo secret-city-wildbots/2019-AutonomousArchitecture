@@ -107,6 +107,7 @@ AddOutputFilter chunkFilter
 			<Item Name="DriveHalt.vi" Type="VI" URL="../DriveHalt.vi"/>
 			<Item Name="FollowPath.vi" Type="VI" URL="../FollowPath.vi"/>
 			<Item Name="ParameterParser.vi" Type="VI" URL="../ParameterParser.vi"/>
+			<Item Name="PathSearch.vi" Type="VI" URL="../PathSearch.vi"/>
 		</Item>
 		<Item Name="Driver Station" Type="Folder">
 			<Item Name="DriverStationGetData.vi" Type="VI" URL="../DriverStationGetData.vi"/>
