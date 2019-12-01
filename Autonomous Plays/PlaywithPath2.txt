@@ -1,0 +1,9 @@
+DriveHalt=1000,;
+SetRobotPos=60,140,0,;
+DriveHalt=1000,;
+FollowPath=1,Forward then Turn Right then Turn Left,;
+DriveEnd=;
+*=;
+AutoWait=5000,;
+AutoPressA=;
+AutoEnd=;
